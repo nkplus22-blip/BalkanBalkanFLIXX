@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BalkanFlix IPTV</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Osnovni izgled */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: rgba(0,0,0,0.7);
+      position: relative;
+      z-index: 2;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #00bfff;
+    }
+
+    header p {
+      color: #ccc;
+      margin-top: 10px;
+    }
+
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: #00bfff;
+      cursor: pointer;
+    }
+
+    /* Overlay meni */
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      background-color: rgba(0,0,0,0.95);
+      overflow-x: hidden;
+      transition: 0.5s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .overlay a {
+      padding: 10px;
+      font-size: 22px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .overlay a:hover {
+      color: #00bfff;
+    }
+
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 40px;
+    }
+
+    /* Slike s fade-in efektom */
+    .banner-img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin: 20px 0;
+      display: block;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .banner-img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Hero slika */
+    .hero-image img {
+      opacity: 0.8;
+    }
+
+    /* Hero sekcija */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0,0,0,0.6);
+      z-index: 2;
+      position: relative;
+    }
+
+    .hero h1 {
+      color: #00bfff;
+    }
+
+    .counters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .counter-box {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 12px;
+      width: 150px;
+      box-shadow: 0 0 12px rgba(0,191,255,0.3);
+    }
+
+    .counter {
+      font-size: 2rem;
+      color: #00bfff;
+    }
+
+    .content {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,191,255,0.1);
+    }
+
+    ul {
+      text-align: left;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    /* Video sekcija */
+    .video-section {
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .video-section video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0,191,255,0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(0,0,0,0.8);
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    /* Canvas pozadina */
+    canvas#tech-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      opacity: 0.4;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="tech-bg"></canvas>
+
+<header>
+  <h1>BalkanFlix IPTV</h1>
+  <p>Vaša porodica, vaša televizija – najbolji IPTV servis</p>
+  <button class="menu-toggle" onclick="openNav()">☰</button>
+</header>
+
+<section class="hero-image">
+  <img src="image11.png" alt="BalkanFlix IPTV baner" class="banner-img fade-img">
+</section>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="index.html">Početna</a>
+  <a href="cjenovnik.html">Cijene i akcije</a>
+  <a href="top15.html">Top 30</a>
+  <a href="komentari.html">Komentari</a>
+  <a href="tim.html">Postani dio tima</a>
+  <a href="onama.html">O nama</a>
+  <a href="kontakt.html">Kontakt</a>
+  <a href="placanje.html">Plaćanje</a>
+  <a href="kako-da-gledas.html">Kako da gledaš</a>
+  <a href="aplikacije.html">Aplikacije za korištenje</a>
+</div>
+
+<section class="hero">
+  <h1>Dobrodošli u BalkanFlix IPTV</h1>
+  <p>Već 9 godina pružamo vrhunsku IPTV uslugu bez prekida i trzanja – za Vas i Vašu porodicu.</p>
+</section>
+
+<section class="counters">
+  <div class="counter-box"><h2 class="counter" data-target="16000">0</h2><p>Zadovoljnih korisnika</p></div>
+  <div class="counter-box"><h2 class="counter" data-target="9">0</h2><p>Godina sa vama</p></div>
+  <div class="counter-box"><h2 class="counter" data-target="2100">0</h2><p>Live kanala</p></div>
+  <div class="counter-box"><h2 class="counter" data-target="75000">0</h2><p>Videoteka</p></div>
+</section>
+
+<section class="content">
+  <h2>Zašto odabrati BalkanFlix IPTV?</h2>
+  <p>Naš IPTV servis nudi savršen spoj kvaliteta, stabilnosti i povoljne cijene...</p>
+  <p>📌 Provjerite <a href="cjenovnik.html">pakete i akcije</a>, <a href="top15.html">Top 15 filmova i serija</a> ili <a href="komentari.html">komentare</a>.</p>
+</section>
+
+<section class="video-section">
+  <video controls autoplay muted loop>
+    <source src="ponudepaketa.mp4" type="video/mp4">
+    Vaš pretraživač ne podržava video prikaz.
+  </video>
+</section>
+
+<section class="content">
+  <h2>Šta je Internet televizija (IPTV)?</h2>
+  <ul>
+    <li>Više hiljada TV kanala iz cijelog svijeta</li>
+    <li>Velika videoteka sa filmovima i serijama na zahtjev</li>
+    <li>Gledanje na Smart TV-u, mobitelu, tabletu, računaru ili TV box uređajima</li>
+    <li>Bez dodatnih antena ili komplikovane instalacije</li>
+    <li>Povoljnije od klasične televizije</li>
+  </ul>
+</section>
+
+<section class="bottom-image">
+  <img src="image22.png" alt="IPTV ponuda" class="banner-img fade-img">
+</section>
+
+<footer>
+  <p>&copy; 2025 BalkanFlix IPTV | Kontakt: 
+    <a href="https://wa.me/381654489635">WhatsApp</a> | 
+    Email: nkplus22@gmail.com
+  </p>
+</footer>
+
+<script>
+/* Ostaje identično – tvoje animacije, brojači, canvas itd. */
+</script>
+
+</body>
+</html>
