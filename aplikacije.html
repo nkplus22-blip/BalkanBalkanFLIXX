@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aplikacije za korištenje - BalkanFlix IPTV</title>
+
+  <!-- poveži stil -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Preload važnih ikona (ako ih ima) -->
+  <link rel="preload" href="image11.png" as="image" />
+</head>
+<body>
+
+  <!-- fixed canvas pozadina -->
+  <canvas id="tech-bg" aria-hidden="true"></canvas>
+
+  <!-- unified header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <h1>BalkanFlix IPTV</h1>
+        <p class="tagline">Vaša porodica, vaša televizija — najbolji IPTV servis</p>
+      </div>
+
+      <button id="menuToggle" class="menu-toggle" aria-label="Otvori meni" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav id="mainNav" class="main-nav" aria-label="Glavna navigacija">
+      <a href="index.html">Početna</a>
+      <a href="cjenovnik.html">Cijene i akcije</a>
+      <a href="top15.html">Top 30</a>
+      <a href="komentari.html">Komentari</a>
+      <a href="tim.html">Postani dio tima</a>
+      <a href="onama.html">O nama</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="placanje.html">Plaćanje</a>
+      <a href="kako-da-gledas.html">Kako da gledaš</a>
+      <a href="aplikacije.html" class="active">Aplikacije za korištenje</a>
+    </nav>
+  </header>
+
+  <main class="content-wrap">
+    <section class="container apps-section">
+      <h2>Podržane aplikacije</h2>
+
+      <p class="lead">Listu testiranja i preporučene aplikacije koje podržavamo — instalirajte i povežite brzo i jednostavno.</p>
+
+      <div class="grid" id="appsGrid">
+        <!-- Kartice su semantički jednostavne; možeš mijenjati tekst bez dira layouta -->
+        <div class="card"><h3>Smart One IPTV</h3></div>
+        <div class="card"><h3>Smart IPTV</h3></div>
+        <div class="card"><h3>SSIPTV</h3></div>
+        <div class="card"><h3>Net IPTV</h3></div>
+        <div class="card"><h3>GSE Smart IPTV</h3></div>
+        <div class="card"><h3>IPTV Smarters</h3></div>
+        <div class="card"><h3>XCIPTV Player</h3></div>
+        <div class="card"><h3>Perfect Player</h3></div>
+        <div class="card"><h3>Lazy IPTV</h3></div>
+        <div class="card"><h3>IPTV Extreme</h3></div>
+        <div class="card"><h3>OTT Navigator</h3></div>
+        <div class="card"><h3>IPTV Pro</h3></div>
+        <div class="card"><h3>IPTV Core</h3></div>
+        <div class="card"><h3>IPTV+ Player</h3></div>
+        <div class="card"><h3>XCIPTV Pro</h3></div>
+        <div class="card"><h3>iMPlayer</h3></div>
+        <div class="card"><h3>ProgTV</h3></div>
+        <div class="card"><h3>OTTPlayer</h3></div>
+      </div>
+
+      <div class="highlight">
+        <h3>Preuzmite našu preporučenu aplikaciju</h3>
+        <p>Za lakši pristup BalkanFlix IPTV na Android uređajima.</p>
+        <a class="btn primary" href="https://www.google.com/amp/s/apkpure.com/geniuses-player-pro/com.geniusesplayerpro.geniusesplayerproiptvbox/amp" target="_blank" rel="noopener noreferrer">Preuzmi aplikaciju</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- unified footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>&copy; 2025 BalkanFlix IPTV</p>
+      <p>Email: <a href="mailto:nkplus22@gmail.com">nkplus22@gmail.com</a>
+         | WhatsApp: <a href="https://wa.me/381654489635">+381 65 448 9635</a></p>
+    </div>
+  </footer>
+
+  <!-- poveži JS -->
+  <script src="scripts.js" defer></script>
+</body>
+</html>
